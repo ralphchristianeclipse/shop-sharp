@@ -49,7 +49,6 @@ namespace Shop
       app.UseCors(options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
       app.UseHttpsRedirection();
       app.UseMvc();
-
     }
   }
 }

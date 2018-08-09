@@ -27,11 +27,13 @@ namespace Shop.Controllers
       if (_context.Products.Count() == 0)
       {
         var random = new Random();
-        var products = Enumerable.Range(0, 1000).Select(index => new Product() { Name = $"Item #{index}", Price = index * 1 });
+        var products = Enumerable.Range(0, 100000).Select(index => new Product() { Name = $"Item #{index}", Price = index * 1 });
         var items = Enumerable.Range(0, 5000).Select(index => new Item() { ProductId = random.Next(0, 1000), Quantity = random.Next(0, index), TransactionId = random.Next(0, 1000) });
+        // var transactions = Enumerable.Range(0, 1000).Select(index => new Transaction() { Amount = index * random.Next(0, index) });
 
         _context.Products.AddRange(products);
         _context.Items.AddRange(items);
+        // _context.Transactions.AddRange(transactions);
         _context.SaveChanges();
       }
     }
