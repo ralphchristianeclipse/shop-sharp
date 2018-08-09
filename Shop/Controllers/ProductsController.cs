@@ -28,7 +28,7 @@ namespace Shop.Controllers
       {
         var random = new Random();
         var products = Enumerable.Range(0, 100000).Select(index => new Product() { Name = $"Item #{index}", Price = index * 1 });
-        var items = Enumerable.Range(0, 5000).Select(index => new Item() { ProductId = random.Next(0, 1000), Quantity = random.Next(0, index), TransactionId = random.Next(0, 1000) });
+        var items = Enumerable.Range(0, 5000).Select(index => new Item() { ProductId = random.Next(0, 100000), Quantity = random.Next(0, index), TransactionId = random.Next(0, 1000) });
         // var transactions = Enumerable.Range(0, 1000).Select(index => new Transaction() { Amount = index * random.Next(0, index) });
 
         _context.Products.AddRange(products);
@@ -44,10 +44,16 @@ namespace Shop.Controllers
       return await _context.Products.Include(p => p.Items).ToAsyncEnumerable<Product>().ToList();
     }
 
-    [HttpGet("latest", Name = "Latest")]
+    [HttpGet("latest")]
     public async Task<ActionResult<IEnumerable<Product>>> GetLatest([FromQuery] int count = 5)
     {
       return await _context.Products.Include(p => p.Items).ToAsyncEnumerable<Product>().TakeLast(count).ToList();
+    }
+
+    [HttpGet("first")]
+    public async Task<ActionResult<IEnumerable<Product>>> GetFirst([FromQuery] int count = 5)
+    {
+      return await _context.Products.Include(p => p.Items).ToAsyncEnumerable<Product>().Take(count).ToList();
     }
 
     // GET api/values/5
