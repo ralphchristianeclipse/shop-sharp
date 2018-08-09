@@ -41,19 +41,19 @@ namespace Shop.Controllers
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Product>>> Get()
     {
-      return await _context.Products.Include(p => p.Items).ToAsyncEnumerable<Product>().ToList();
+      return await _context.Products.Include(p => p.Items).ToListAsync();
     }
 
     [HttpGet("latest")]
     public async Task<ActionResult<IEnumerable<Product>>> GetLatest([FromQuery] int count = 5)
     {
-      return await _context.Products.Include(p => p.Items).ToAsyncEnumerable<Product>().TakeLast(count).ToList();
+      return await _context.Products.Include(p => p.Items).TakeLast(count).ToListAsync();
     }
 
     [HttpGet("first")]
     public async Task<ActionResult<IEnumerable<Product>>> GetFirst([FromQuery] int count = 5)
     {
-      return await _context.Products.Include(p => p.Items).ToAsyncEnumerable<Product>().Take(count).ToList();
+      return await _context.Products.Include(p => p.Items).Take(count).ToListAsync();
     }
 
     // GET api/values/5
