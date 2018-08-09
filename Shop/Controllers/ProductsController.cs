@@ -24,7 +24,7 @@ namespace Shop.Controllers
     }
     public void Seed()
     {
-      if (_context.Products.Count() == 0)
+      if (!_context.Products.Any())
       {
         var random = new Random();
         var products = Enumerable.Range(0, 100000).Select(index => new Product() { Name = $"Item #{index}", Price = index * 1 });
@@ -39,15 +39,12 @@ namespace Shop.Controllers
     }
     // GET api/values
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Product>>> Get()
-    {
-      return await _context.Products.Include(p => p.Items).ToListAsync();
-    }
+    public async Task<ActionResult<IEnumerable<Product>>> Get() => await _context.Products.Include(p => p.Items).ToListAsync();
 
     [HttpGet("latest")]
     public async Task<ActionResult<IEnumerable<Product>>> GetLatest([FromQuery] int count = 5)
     {
-      return await _context.Products.Include(p => p.Items).TakeLast(count).ToListAsync();
+      return await _context.Products.Include(p => p.Items).ToAsyncEnumerable<Product>().TakeLast(count).ToList();
     }
 
     [HttpGet("first")]
@@ -55,13 +52,9 @@ namespace Shop.Controllers
     {
       return await _context.Products.Include(p => p.Items).Take(count).ToListAsync();
     }
-
     // GET api/values/5
     [HttpGet("{id}")]
-    public async Task<ActionResult<Product>> Get(int id)
-    {
-      return await _context.Products.FindAsync(id);
-    }
+    public async Task<ActionResult<Product>> Get(int id) => await _context.Products.FindAsync(id);
 
     // POST api/values
     [HttpPost]
