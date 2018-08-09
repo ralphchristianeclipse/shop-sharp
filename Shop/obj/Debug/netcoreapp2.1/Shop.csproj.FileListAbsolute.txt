@@ -1,0 +1,14 @@
+C:\Users\Ralph\source\repos\Shop\Shop\bin\Debug\netcoreapp2.1\Shop.deps.json
+C:\Users\Ralph\source\repos\Shop\Shop\bin\Debug\netcoreapp2.1\Shop.runtimeconfig.json
+C:\Users\Ralph\source\repos\Shop\Shop\bin\Debug\netcoreapp2.1\Shop.runtimeconfig.dev.json
+C:\Users\Ralph\source\repos\Shop\Shop\bin\Debug\netcoreapp2.1\Shop.dll
+C:\Users\Ralph\source\repos\Shop\Shop\bin\Debug\netcoreapp2.1\Shop.pdb
+C:\Users\Ralph\source\repos\Shop\Shop\obj\Debug\netcoreapp2.1\Shop.csprojAssemblyReference.cache
+C:\Users\Ralph\source\repos\Shop\Shop\obj\Debug\netcoreapp2.1\Shop.csproj.CoreCompileInputs.cache
+C:\Users\Ralph\source\repos\Shop\Shop\obj\Debug\netcoreapp2.1\Shop.RazorAssemblyInfo.cache
+C:\Users\Ralph\source\repos\Shop\Shop\obj\Debug\netcoreapp2.1\Shop.RazorAssemblyInfo.cs
+C:\Users\Ralph\source\repos\Shop\Shop\obj\Debug\netcoreapp2.1\Shop.AssemblyInfoInputs.cache
+C:\Users\Ralph\source\repos\Shop\Shop\obj\Debug\netcoreapp2.1\Shop.AssemblyInfo.cs
+C:\Users\Ralph\source\repos\Shop\Shop\obj\Debug\netcoreapp2.1\Shop.RazorTargetAssemblyInfo.cache
+C:\Users\Ralph\source\repos\Shop\Shop\obj\Debug\netcoreapp2.1\Shop.dll
+C:\Users\Ralph\source\repos\Shop\Shop\obj\Debug\netcoreapp2.1\Shop.pdb
